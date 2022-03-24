@@ -95,6 +95,9 @@
 							<supportingFilesToGenerate>
 								ApiUtil.java
 							</supportingFilesToGenerate>
+							<configOptions>
+								<interfaceOnly>true</interfaceOnly>
+							</configOptions>
 						</configuration>
 					</execution>
 				</executions>
