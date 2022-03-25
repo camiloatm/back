@@ -1,15 +1,16 @@
 package com.store.back.handler;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
-
 import com.similar.products.model.ProductDetail;
 import com.store.back.exception.ProductException;
 import com.store.back.services.ProductService;
 import org.jboss.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 @Component
 public class ProductHandler {
@@ -23,6 +24,7 @@ public class ProductHandler {
     this.productService = productService;
   }
 
+  @Cacheable(cacheNames = "products")
   public Set<ProductDetail> searchSimilarProducts(String productId) throws ProductException {
     LOGGER.info("Buscando productos similares al productId: " + productId);
     Set<ProductDetail> similarProductDetail = new HashSet<>();

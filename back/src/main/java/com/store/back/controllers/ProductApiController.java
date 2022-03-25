@@ -1,7 +1,5 @@
 package com.store.back.controllers;
 
-import java.util.Set;
-
 import com.similar.products.api.ProductApi;
 import com.similar.products.model.ProductDetail;
 import com.store.back.exception.ProductException;
@@ -10,6 +8,8 @@ import org.jboss.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Set;
 
 @RestController
 public class ProductApiController implements ProductApi {
